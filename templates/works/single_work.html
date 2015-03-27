@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block 'base' %}
+	
+<main role="main">
+{% include 'works/single_elements/intro_wrap.html' %}
+<div id="main" class="row">
+	<div class="row-content buffer-left buffer-right buffer-bottom clear-after">
+		{% include 'works/single_elements/post_nav.html' %}
+		<div class="post-area clear-after">
+			{% include 'works/single_elements/post_article.html' %}
+			{% include 'works/single_elements/post_aside.html' %}
+		</div><!-- post-area -->							
+
+		<div class="meta-social">
+			<ul class="inline center">
+				<li><a href="#" class="twitter-share border-box"><i class="fa fa-twitter fa-lg"></i></a></li>
+				<li><a href="#" class="facebook-share border-box"><i class="fa fa-facebook fa-lg"></i></a></li>
+				<li><a href="#" class="pinterest-share border-box"><i class="fa fa-pinterest fa-lg"></i></a></li>
+			</ul>
+		</div>
+		
+		{% include 'works/single_elements/releated.html' %}
+												
+
+	</div><!-- row-content -->
+</div><!-- row -->			
+</main><!-- main -->
+
+{% endblock %} 

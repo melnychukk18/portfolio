@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block 'base' %}
+	
+<main role="main">
+	{% include 'works/works_elements/header_wrap.html' %}
+	<div id="main" class="row">
+		<div class="row-content buffer clear-after">
+			
+			{% include 'works/works_elements/portfolio_menu.html' %}
+			<div class="grid-items portfolio-section preload">
+				
+				{% include 'works/works_elements/works.html' %}
+				<div class="shuffle-sizer four"></div>
+			</div><!-- grid-items -->	
+
+		</div><!-- row-content -->
+	</div><!-- row -->
+</main><!-- main -->
+
+{% endblock %} 	

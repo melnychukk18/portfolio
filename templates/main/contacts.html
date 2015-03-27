@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block 'base' %}
+	
+<main role="main">
+	{% include 'main/contact_elements/intro_wrap.html' %}
+
+<div id="main">
+	<section class="row section">
+		<div class="row-content buffer even clear-after">
+			<div class="section-title"><h3>Contact Me</h3></div>	
+			<p>I’m an experienced and passionate user interface designer with interaction design background.<br>My goal is to make the world wide web a better place by designing beautiful user experiences, one site at a time.</p>
+
+			{% include 'main/contact_elements/contact_form.html' %}
+
+			<div class="column three last">
+				<div class="widget">
+					<h4>Location</h4>
+					<p>
+						13, 2 Elizabeth ST,<br>
+						Melbourne, Victoria 3000,<br>
+						Australia
+					</p>
+				</div>
+				<div class="widget">
+					<h4>I am Social</h4>
+					<ul class="inline meta-social">
+						<li><a href="#" class="twitter-share border-box"><i class="fa fa-twitter fa-lg"></i></a></li>
+						<li><a href="#" class="facebook-share border-box"><i class="fa fa-facebook fa-lg"></i></a></li>
+						<li><a href="#" class="pinterest-share border-box"><i class="fa fa-pinterest fa-lg"></i></a></li>
+					</ul>
+				</div>								
+			</div>
+		</div>
+	</section>
+
+</div><!-- id-main -->
+</main><!-- main -->
+
+{% endblock %} 
