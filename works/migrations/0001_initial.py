@@ -31,6 +31,7 @@ class Migration(migrations.Migration):
                 ('included', models.CharField(max_length=500)),
                 ('url', models.CharField(max_length=300)),
                 ('thumbnail', models.FileField(upload_to=b'work/thumbnails/')),
+                ('pub_date', models.DateTimeField(auto_now_add=True)),
                 ('image', models.ManyToManyField(to='works.WorkImage')),
             ],
             options={
@@ -42,6 +43,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=100)),
+                ('pub_date', models.DateTimeField(auto_now_add=True)),
             ],
             options={
             },

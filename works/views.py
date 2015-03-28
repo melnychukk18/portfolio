@@ -1,11 +1,19 @@
 from django.shortcuts import render
+from works.models import WorkItem,WorkType
 
 def home(request):
 
 	return render(request, 'main/index.html')
 
 def works(request):
-	context = {'pagetype':'portfolio'}
+	types = WorkType.objects.all()
+	works = WorkItem.objects.all()
+	context = {
+		'pagetype':'portfolio',
+		'works':works,
+		'types':types
+		}
+
 	return render(request, 'works/works.html',
 		context)
 

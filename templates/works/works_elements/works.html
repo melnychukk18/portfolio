@@ -1,10 +1,14 @@
-<article class="item column four" data-groups='["django", "web-design"]'>
-	<figure><img src="http://placehold.it/800x600/ddd/fff&text=Beetle%20image" alt=""></figure>
+{% for work in works %}
+<article class="item column four" data-groups='[{% for type in work.type.all %} "{{type|lower}}" 
+	{% if not forloop.last %}, {% endif %}
+{% endfor %}]'>
+	<figure><img src="{{work.thumbnail.url}}" alt=""></figure>
 	<a class="overlay" href="{% url 'single_work' %}">
 		<div class="overlay-content">
 			<div class="post-type"><i class="icon icon-picture"></i></div>
-			<h2>Essentials</h2>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<h2>{{work.name}}</h2>
+			<p>{{work.thumb_text}}</p>
 		</div><!-- overlay-content -->
 	</a><!-- overlay -->
 </article>
+{% endfor %}
