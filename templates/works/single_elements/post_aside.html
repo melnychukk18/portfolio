@@ -1,19 +1,24 @@
 <aside role="complementary" class="sidebar column three last">
 	<div class="widget">
 		<h4>Client</h4>
-		<p>Cartoonia</p>
+		<p>{{ work.client }}</p>
 	</div>
+	{% if work.role %}
 	<div class="widget">
 		<h4>Role in Project</h4>
-		<p>Lead Designer</p>
+		<p>{{ work.role }}</p>
 	</div>
+	{% endif %}
 	<div class="widget">
+
+	{% if work.included %}
 		<h4>Project included</h4>
-		<p>Mobile and Web Interface</p>
+		<p>{{ work.included }}</p>
 	</div>
+	{% endif %}
+	{% if work.url %}
 	<div class="widget">
-		<h4>External Links</h4>
-		<p>Don't forget to check out spovv portfolio!</p>
-		<a href="http://dribbble.com/spovv" class="button transparent">View Project</a>
-	</div>													
+		<a href="{{ work.url }}" class="button transparent">View Project</a>
+	</div>
+	{% endif %}													
 </aside>

@@ -3,7 +3,7 @@
 	{% if not forloop.last %}, {% endif %}
 {% endfor %}]'>
 	<figure><img src="{{work.thumbnail.url}}" alt=""></figure>
-	<a class="overlay" href="{% url 'single_work' %}">
+	<a class="overlay" href="{% url 'single_work' work.pk %}">
 		<div class="overlay-content">
 			<div class="post-type"><i class="icon icon-picture"></i></div>
 			<h2>{{work.name}}</h2>

@@ -31,4 +31,16 @@ class WorkItem(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	def get_next(self):
+	    next = WorkItem.objects.filter(id__gt=self.id)
+	    if next:
+	      return next[0]
+	    return False
+
+	def get_prev(self):
+		prev = WorkItem.objects.filter(id__lt=self.id).order_by('-id')
+		if prev:
+			return prev[0]
+		return False
+
 

@@ -1,7 +1,13 @@
 <div id="post-nav">
 	<ul class="clear-after reset plain">
-		<li id="prev-items" class="post-nav"><a href="#"><i class="fa fa-chevron-left"></i><span class="label hidden-mobile">Prev</span></a></li> 
-		<li id="all-items" class="post-nav"><a href="#"><i class="icon icon-images"></i></a></li> 							 
-		<li id="next-items" class="post-nav"><a href="#"><span class="label hidden-mobile">Next</span><i class="fa fa-chevron-right"></i></a></li>  
+		{% if prev %}
+		<li id="prev-items" class="post-nav"><a href="{% url 'single_work' prev.pk %}"><i class="fa fa-chevron-left"></i><span class="label hidden-mobile">Prev</span></a></li> 
+		{% else %}
+		<li id="prev-items" class="post-nav"></li> 
+		{% endif %}
+		<li id="all-items" class="post-nav"><a href="{% url 'works' %}"><i class="icon icon-images"></i></a></li> 	
+		{% if next %}						 
+		<li id="next-items" class="post-nav"><a href="{% url 'single_work' next.id %}"><span class="label hidden-mobile">Next</span><i class="fa fa-chevron-right"></i></a></li> 
+		{% endif  %} 
 	</ul>
 </div>

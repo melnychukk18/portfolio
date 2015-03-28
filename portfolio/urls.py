@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     url(r'^$', works_views.home, name='home'),
     url(r'^works/$', works_views.works, name='works'),
-    url(r'^single/$', works_views.single_work, name='single_work'),
+    url(r'^single/(?P<work_pk>[\w-]+)/$', works_views.single_work, name='single_work'),
     url(r'^contacts/$', works_views.contacts, name='contacts'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
 		{'document_root': settings.MEDIA_ROOT}),
