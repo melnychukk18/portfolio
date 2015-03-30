@@ -1,33 +1,15 @@
 <div class="related clear-after">
 <h4>Related Projects</h4>
-<div class="item">
-	<figure><img src="http://placehold.it/600x600/ddd/fff&text=Beetle%20image" alt=""></figure>
-	<a class="overlay" href="#">
+{% for i in releated %}
+<div class="item {% if forloop.last %} last {% endif %}">
+	<figure><img src="{{ i.thumbnail.url }}" alt=""></figure>
+	<a class="overlay" href="{% url 'single_work' i.pk %}">
 		<div class="overlay-content">
 			<div class="post-type"><i class="icon icon-search"></i></div>
-			<h2>Spicemode</h2>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<h2>{{ i.name }}</h2>
+			<p>{{ i.thumb_text }}</p>
 		</div><!-- overlay-content -->
 	</a><!-- overlay -->								
 </div>
-<div class="item">
-	<figure><img src="http://placehold.it/600x600/ddd/fff&text=Beetle%20image" alt=""></figure>
-	<a class="overlay" href="#">
-		<div class="overlay-content">
-			<div class="post-type"><i class="icon icon-search"></i></div>
-			<h2>In the end</h2>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div><!-- overlay-content -->
-	</a><!-- overlay -->								
-</div>
-<div class="item last">
-	<figure><img src="http://placehold.it/600x600/ddd/fff&text=Beetle%20image" alt=""></figure>
-	<a class="overlay" href="#">
-		<div class="overlay-content">
-			<div class="post-type"><i class="icon icon-search"></i></div>
-			<h2>Moove</h2>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div><!-- overlay-content -->
-	</a><!-- overlay -->								
-</div>											
+{% endfor %}											
 </div>	

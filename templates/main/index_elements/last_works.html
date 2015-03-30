@@ -3,36 +3,18 @@
 	<div class="row-content buffer even clear-after">
 		<div class="section-title"><h3>Latest Works</h3></div>
 			<div class="grid-items portfolio-section preload">
+			{% for work in last_works %}
 				<article class="item column four" data-groups='["fun", "icons"]'>
-					<figure><img src="http://placehold.it/800x600/ddd/fff&text=Beetle%20image" alt=""></figure>
-					<a class="overlay" href="#">
+					<figure><img src="{{ work.thumbnail.url }}" alt=""></figure>
+					<a class="overlay" href="{% url 'single_work' work.pk %}">
 						<div class="overlay-content">
 							<div class="post-type"><i class="icon icon-picture"></i></div>
-							<h2>The House</h2>
-							<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<h2>{{ work.name }}</h2>
+							<p>{{ work.thumb_text }}</p>
 						</div><!-- overlay-content -->
 					</a><!-- overlay -->
 				</article>
-				<article class="item column four" data-groups='["fun", "icons"]'>
-					<figure><img src="http://placehold.it/800x600/ddd/fff&text=Beetle%20image" alt=""></figure>
-					<a class="overlay" href="#">
-						<div class="overlay-content">
-							<div class="post-type"><i class="icon icon-picture"></i></div>
-							<h2>The House</h2>
-							<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div><!-- overlay-content -->
-					</a><!-- overlay -->
-				</article>
-				<article class="item column four" data-groups='["fun", "icons"]'>
-					<figure><img src="http://placehold.it/800x600/ddd/fff&text=Beetle%20image" alt=""></figure>
-					<a class="overlay" href="#">
-						<div class="overlay-content">
-							<div class="post-type"><i class="icon icon-picture"></i></div>
-							<h2>The House</h2>
-							<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div><!-- overlay-content -->
-					</a><!-- overlay -->
-				</article>		
+			{% endfor %}
 				
 				<div class="shuffle-sizer four"></div>
 			</div><!-- grid-items -->
